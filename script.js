@@ -1,14 +1,16 @@
 let winnerButton = Math.floor(Math.random() * 3) + 1;
-function ShowAnswer(buttonNumber) {
+
+function showAnswer(buttonNumber) {
     let messageElement = document.getElementById("message");
     let currentButton = document.getElementById('HiddenButton' + buttonNumber);
-        if (buttonNumber === winnerButton) {
-            messageElement.textContent = "Felicitări! Ai găsit butonul câștigător!";
-            currentButton.classList.remove('btn-primary');
-            currentButton.classList.add('btn-success');
-        } else {
-            messageElement.textContent = "Ne pare rău, acest buton nu este câștigător. Încearcă din nou.";
-            currentButton.classList.remove('btn-primary');
-            currentButton.classList.add('btn-danger');
-        }
+    if (buttonNumber === winnerButton) {
+        messageElement.textContent = "Congratulations! You found the winning button!";
+        currentButton.classList.remove('btn-primary');
+        currentButton.classList.add('btn-success');
+    } else {
+        messageElement.textContent = "Sorry, this button is not a winner. Please try again.";
+        currentButton.classList.remove('btn-primary');
+        currentButton.classList.add('btn-danger');
+    }
 }
+
